@@ -1,10 +1,11 @@
 MenardsWebsite::Application.routes.draw do
 
 
-
   root :to => 'core#index'
 
-  match '/events', :to => 'core#events'
+  devise_for :admins
+
+  resources :events
 
   match '/shop', :to => 'core#shop'
 
